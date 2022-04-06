@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000046;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1CB5E0, #000046);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1CB5E0, #000046); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    min-height: 100vh;
+}
+
+header h1 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header, form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+    font-size: 20px;
+}
+
+form input, form button {
+    font-size: 1.5rem;
+    border: none;
+    padding: 0.3rem;
+    background-color: white;
+}
+
+form button {
+    color: #000046;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+form button:hover {
+    color: white;
+    background-color: #000046;
+}
+
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list {
+    min-width: 30%;
+    list-style: none;
+}
+
+.todo {
+    margin: 0.5rem;
+    background-color: white;
+    color: black;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.trash-btn, .completed-btn {
+    background: #060827;
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.completed-btn {
+    background-color: rgb(59, 140, 207);
+}

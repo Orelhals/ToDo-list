@@ -2,10 +2,10 @@
 const todoInput = document.querySelector('.todo-input');
 const todoButton = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list');
-
 // Eventos de escuta 
 
 todoButton.addEventListener('click', addTarefa);
+todoList.addEventListener('click', deleteAndCheck);
 
 // Funções 
 
@@ -18,6 +18,7 @@ function addTarefa(event) {
     const todoLi = document.createElement('li');
     todoLi.classList.add('todo-list');
     todoLi.innerText = todoInput.value;
+    todoInput.value = '';
 
     todoDiv.appendChild(todoLi);
 
@@ -37,5 +38,18 @@ function addTarefa(event) {
     todoDiv.appendChild(todoDivInsert);
 
     todoList.appendChild(todoDiv);
+}
+
+// deleteAndCheck
+
+function deleteAndCheck (e) {
+    //console.log(e.target);
+
+    const item = e.target;
+
+    if (item.classList[0] === 'trash-btn') {
+        const todo = item.parentElement
+        todo.remove()
+    }
 }
 

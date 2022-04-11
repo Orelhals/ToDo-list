@@ -32,6 +32,7 @@ function addTarefa(event) {
     todoDivInsert.appendChild(completedButton);
 
     const trashButton = document.createElement('button');
+    
     trashButton.innerHTML = '<i class="fas fa-trash"></i>';
     trashButton.classList.add('trash-btn');
     todoDivInsert.appendChild(trashButton);
@@ -43,13 +44,19 @@ function addTarefa(event) {
 // deleteAndCheck
 
 function deleteAndCheck (e) {
-    //console.log(e.target);
+    console.log(e.target);
 
-    const item = e.target;
+    const item = e.target;;
+    const todo = item.parentElement.parentElement.parentElement;
 
-    if (item.classList[0] === 'trash-btn') {
-        const todo = item.parentElement
-        todo.remove()
+    if (item.classList[1] === 'fa-trash') {
+        todo.classList.add('fail')
+        todo.addEventListener('transitioned', () => {
+            todo.remove()
+        })
+    }
+    if (item.classList[1] === 'fa-check') {
+        todo.classList.toggle('completed')
     }
 }
 

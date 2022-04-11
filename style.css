@@ -61,6 +61,7 @@ form button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: all 1s ease;
     
 }
 
@@ -74,4 +75,15 @@ form button:hover {
 
 .completed-btn {
     background-color: rgb(59, 140, 207);
+}
+
+.completed {
+    background-color: greenyellow;
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.fail {
+    transform: translate(8rem) rotate(20deg);
+    opacity: 0;
 }
